@@ -31,6 +31,7 @@ if (Posts.find().count() === 0) {
     postId: telescopeId,
     userId: sachaId,
     author: sacha.profile.name,
+    submitted: new Date(now - 3 * 3600 * 1000),
     body: 'You sure can Tom!'
   });
 
