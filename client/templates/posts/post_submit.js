@@ -12,7 +12,10 @@ Template.postSubmit.events({
       if (error)
         return alert(error.reason);
 
-      Router.go('postPage', {_id:result._id});
+      if (result.postExists)
+        alert('This link has already been posted');
+
+      Router.go('postPage', {_id: result._id});
     });
 
 
