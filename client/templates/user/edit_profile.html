@@ -1,0 +1,28 @@
+<template name="editProfile">
+  <form class="main form page">
+    <div class="form-group">
+      <div class="controls">
+        <h3>{{username}}</h3>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="nativeLanguage">Native Language</label>
+      <div class="controls">
+        <select name="nativeLanguage" id="nativeLanguage" class="form-control">
+          <option value="English">English</option>
+          <option value="Korean">Korean</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="languageOfStudy">Language of Study</label>
+      <div class="controls">
+        <select name="languageOfStudy" id="languageOfStudy" class="form-control">
+          <option value="English">English</option>
+          <option value="Korean">Korean</option>
+        </select>
+      </div>
+    </div>
+    <input type="submit" value="Save Changes" class="btn btn-primary submit"/>
+  </form>
+</template>
