@@ -1,6 +1,6 @@
-Template.postEdit.onCreated(function () {
-  Session.set('postEditErrors', {});
-});
+Template.postEdit.onCreated( () => Session.set('postEditErrors', {}) );
+
+Template.postEdit.onRendered( () => $('[name=language]').val(Template.currentData().language) );
 
 Template.postEdit.helpers({
   errorMessage: function(field) {
@@ -8,7 +8,8 @@ Template.postEdit.helpers({
   },
   errorClass: function(field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
-  }
+  },
+  language: () => this.language
 });
 
 Template.postEdit.events({
