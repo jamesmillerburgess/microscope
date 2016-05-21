@@ -2,6 +2,10 @@ Template.postSubmit.onCreated(function () {
   Session.set('postSubmitErrors', {});
 });
 
+Template.postSubmit.onRendered( () => {
+  $("[name=language]").val(Meteor.user().profile.languageOfStudy);
+});
+
 Template.postSubmit.helpers({
   errorMessage: function (field) {
     return Session.get('postSubmitErrors')[field];
