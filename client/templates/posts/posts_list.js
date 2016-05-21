@@ -49,5 +49,5 @@ Template.postsList.onRendered(function () {
 });
 
 Template.postsList.helpers({
-  nativeLanguage: () => Meteor.user().profile.nativeLanguage
+  nativeLanguage: () => Meteor.user() ? Meteor.user().profile.nativeLanguage : 'English'
 });

@@ -25,3 +25,4 @@ audit-argument-checks
 msavin:mongol
 standard-minifier-css
 standard-minifier-js
+meteorhacks:fast-render
