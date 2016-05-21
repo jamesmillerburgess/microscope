@@ -13,7 +13,7 @@ Template.editProfile.events({
 
     let profileProperties = {
       nativeLanguage: $(e.target).find('[name=nativeLanguage]').val(),
-      languageOfStudy: $(e.target).find('[name=languageOfStudy]').val(),
+      languageOfStudy: $(e.target).find('[name=languageOfStudy]').val()
     };
 
     //TODO: Write validateProfile function

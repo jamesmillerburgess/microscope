@@ -1,4 +1,5 @@
 Template.postsList.onRendered(function () {
+  
   this.find('.wrapper')._uihooks = {
     insertElement: function (node, next) {
       $(node)
@@ -45,4 +46,8 @@ Template.postsList.onRendered(function () {
       })
     }
   }
+});
+
+Template.postsList.helpers({
+  nativeLanguage: () => Meteor.user().profile.nativeLanguage
 });
