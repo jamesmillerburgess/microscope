@@ -11,15 +11,9 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        <li class="{{activeRouteClass 'bestPosts'}}">
-          <a href="{{pathFor 'bestPosts'}}">Best</a>
-        </li>
         {{#if currentUser}}
           <li class="{{activeRouteClass 'postSubmit'}}">
             <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
-          </li>
-          <li class="dropdown">
-            {{> notifications}}
           </li>
         {{/if}}
         <li class="{{activeRouteClass 'editProfile'}}">
@@ -27,6 +21,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+          <li class="dropdown">
+            {{> notifications}}
+          </li>
+        {{/if}}
         {{> loginButtons}}
       </ul>
     </div>
