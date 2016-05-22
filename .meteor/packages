@@ -27,3 +27,4 @@ standard-minifier-css
 standard-minifier-js
 meteorhacks:fast-render
 accounts-facebook
+force-ssl
