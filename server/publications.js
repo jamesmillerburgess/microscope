@@ -23,3 +23,5 @@ Meteor.publish('notifications', function() {
 Meteor.publish('user', function() {
   return Meteor.user();
 });
+
+Meteor.publish('languages', () => Languages.find());

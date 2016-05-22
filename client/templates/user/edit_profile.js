@@ -5,6 +5,7 @@ Template.editProfile.onRendered( () => {
 
 Template.editProfile.helpers({
   username: () => Meteor.user().username,
+  languages: () => Languages.find()
 });
 
 Template.editProfile.events({

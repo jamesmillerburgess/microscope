@@ -1,11 +1,13 @@
 <template name="postEdit">
   <form class="main form page">
     <div class="form-group {{errorClass 'language'}}">
-      <label class="control-label" for="language">URL</label>
+      <label class="control-label" for="language">Language</label>
       <div class="controls">
         <select name="language" id="language" class="form-control">
-          <option value="English">English</option>
-          <option value="Korean">Korean</option>
+          <option value="Select">Select</option>
+          {{#each languages}}
+            <option value="{{name}}">{{name}}</option>
+          {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'language'}}</span>
       </div>
@@ -20,7 +22,8 @@
     <div class="form-group {{errorClass 'body'}}">
       <label class="control-label" for="body">Body</label>
       <div class="controls">
-        <textarea name="body" id="body" type="text" rows="4" value="{{body}}" placeholder="Your post" class="form-control"></textarea>
+        <textarea name="body" id="body" type="text" rows="4" value="{{body}}" placeholder="Your post"
+                  class="form-control"></textarea>
         <span class="help-block">{{errorMessage 'body'}}</span>
       </div>
     </div>

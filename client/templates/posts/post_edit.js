@@ -9,7 +9,8 @@ Template.postEdit.helpers({
   errorClass: function(field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
   },
-  language: () => this.language
+  language: () => this.language,
+  languages: () => Languages.find()
 });
 
 Template.postEdit.events({
@@ -19,13 +20,13 @@ Template.postEdit.events({
     var currentPostId = this._id;
 
     var postProperties = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=url]').val(),
+      language: $(e.target).find('[name=language]').val(),
+      title: $(e.target).find('[name=title]').val(),
       body: $(e.target).find('[name=body]').val()
     };
 
     var errors = validatePost(postProperties);
-    if (errors.title || errors.url || errors.body)
+    if (errors.title || errors.language || errors.body)
       return Session.set('postEditErrors', errors);
 
     Posts.update(currentPostId, {$set: postProperties}, function (error) {

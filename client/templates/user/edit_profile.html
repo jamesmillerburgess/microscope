@@ -9,8 +9,10 @@
       <label class="control-label" for="nativeLanguage">Native Language</label>
       <div class="controls">
         <select name="nativeLanguage" id="nativeLanguage" class="form-control">
-          <option value="English">English</option>
-          <option value="Korean">Korean</option>
+          <option value="Select">Select</option>
+          {{#each languages}}
+            <option value="{{name}}">{{name}}</option>
+          {{/each}}
         </select>
       </div>
     </div>
@@ -18,8 +20,10 @@
       <label class="control-label" for="languageOfStudy">Language of Study</label>
       <div class="controls">
         <select name="languageOfStudy" id="languageOfStudy" class="form-control">
-          <option value="English">English</option>
-          <option value="Korean">Korean</option>
+          <option value="Select">Select</option>
+          {{#each languages}}
+            <option value="{{name}}">{{name}}</option>
+          {{/each}}
         </select>
       </div>
     </div>

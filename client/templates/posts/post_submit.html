@@ -4,8 +4,10 @@
       <label class="control-label" for="Language">Language</label>
       <div class="controls">
         <select name="language" id="language" class="form-control">
-          <option value="English">English</option>
-          <option value="Korean">Korean</option>
+          <option value="Select">Select</option>
+          {{#each languages}}
+            <option value="{{name}}">{{name}}</option>
+          {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'language'}}</span>
       </div>

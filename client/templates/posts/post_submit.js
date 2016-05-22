@@ -7,12 +7,9 @@ Template.postSubmit.onRendered( () => {
 });
 
 Template.postSubmit.helpers({
-  errorMessage: function (field) {
-    return Session.get('postSubmitErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
-  }
+  errorMessage: (field) => Session.get('postSubmitErrors')[field],
+  errorClass: (field) => !!Session.get('postSubmitErrors')[field] ? 'has-error' : '',
+  languages: () => Languages.find()
 });
 
 Template.postSubmit.events({
