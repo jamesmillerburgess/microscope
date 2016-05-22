@@ -16,9 +16,6 @@
             <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
           </li>
         {{/if}}
-        <li class="{{activeRouteClass 'editProfile'}}">
-          <a href="{{pathFor 'editProfile'}}">Edit Profile</a>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
@@ -26,6 +23,9 @@
             {{> notifications}}
           </li>
         {{/if}}
+        <li class="{{activeRouteClass 'editProfile'}}">
+          <a href="{{pathFor 'editProfile'}}">Edit Profile</a>
+        </li>
         {{> loginButtons}}
       </ul>
     </div>
