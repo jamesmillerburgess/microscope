@@ -32,6 +32,9 @@
           <a href="{{pathFor 'editProfile'}}">Edit Profile</a>
         </li>
         {{> loginButtons}}
+        {{#if currentUser.profile.picture}}
+          <li><img src="{{currentUser.profile.picture}}" height="50px" width="50px"/></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
