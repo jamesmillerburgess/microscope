@@ -12,6 +12,11 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if currentUser}}
+          <li class="{{activeRouteClass 'myPosts'}}">
+            <a href="{{pathFor 'myPosts'}}">My Posts</a>
+          </li>
+        {{/if}}
+        {{#if currentUser}}
           <li class="{{activeRouteClass 'postSubmit'}}">
             <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
           </li>

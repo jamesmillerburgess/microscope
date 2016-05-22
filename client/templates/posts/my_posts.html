@@ -1,13 +1,13 @@
-<template name="postsList">
+<template name="myPosts">
   <div class="posts page">
-    <h2>{{nativeLanguage}} Posts Needing Correction</h2>
+    <h2>My Posts</h2>
     <div class="wrapper">
       {{#if posts.count}}
         {{#each posts}}
           {{> postItem}}
         {{/each}}
       {{else}}
-        No posts needing correction right now!
+        You don't have any posts yet!
       {{/if}}
     </div>
 
