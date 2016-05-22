@@ -12,25 +12,25 @@ if (Languages.find().count() === 0) {
     'Spanish', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Tibetan', 'Tongan',
     'Traditional Chinese', 'Turkish', 'Turkmen', 'Udmurt', 'Ukrainian', 'Urdu', 'Uyghur', 'Uzbek',
     'Vietnamese', 'Welsh', 'Yiddish', 'Zulu'];
-  for (i in languages) {
+  for (let i in languages) {
     Languages.insert({name: languages[i]});
   }
 }
 
 if (Posts.find().count() === 0) {
-  var now = new Date().getTime();
+  const now = new Date().getTime();
 
   //create two users
-  var tomId = Meteor.users.insert({
+  const tomId = Meteor.users.insert({
     profile: {name: 'Tom Coleman'}
   });
-  var tom = Meteor.users.findOne(tomId);
-  var sachaId = Meteor.users.insert({
+  const tom = Meteor.users.findOne(tomId);
+  const sachaId = Meteor.users.insert({
     profile: {name: 'Sacha Greif'}
   });
-  var sacha = Meteor.users.findOne(sachaId);
+  const sacha = Meteor.users.findOne(sachaId);
 
-  var telescopeId = Posts.insert({
+  const telescopeId = Posts.insert({
     title: 'Introducing Telescope',
     userId: sachaId,
     author: sacha.profile.name,
@@ -79,7 +79,7 @@ if (Posts.find().count() === 0) {
     votes: 0
   });
 
-  for (var i=0; i<10; i++) {
+  for (let i=0; i<10; i++) {
     Posts.insert({
       title: 'Test post #' + i,
       author: sacha.profile.name,

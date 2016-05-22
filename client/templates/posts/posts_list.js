@@ -8,12 +8,12 @@ Template.postsList.onRendered(function () {
         .fadeIn();
     },
     moveElement: function (node, next) {
-      var $node = $(node), $next = $(next);
-      var oldTop = $node.offset().top;
-      var height = $node.outerHeight(true);
+      const $node = $(node), $next = $(next);
+      const oldTop = $node.offset().top;
+      const height = $node.outerHeight(true);
 
       // find all the elements between next and node
-      var $inBetween = $next.nextUntil(node);
+      let $inBetween = $next.nextUntil(node);
       if ($inBetween.length === 0)
         $inBetween = $node.nextUntil(next);
 
@@ -21,7 +21,7 @@ Template.postsList.onRendered(function () {
       $node.insertBefore(next);
 
       // measure new top
-      var newTop = $node.offset().top;
+      const newTop = $node.offset().top;
 
       // move node *back* to where it was before
       $node

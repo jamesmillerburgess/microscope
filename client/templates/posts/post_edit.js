@@ -17,15 +17,15 @@ Template.postEdit.events({
   'submit form': function (e) {
     e.preventDefault();
 
-    var currentPostId = this._id;
+    const currentPostId = this._id;
 
-    var postProperties = {
+    const postProperties = {
       language: $(e.target).find('[name=language]').val(),
       title: $(e.target).find('[name=title]').val(),
       body: $(e.target).find('[name=body]').val()
     };
 
-    var errors = validatePost(postProperties);
+    const errors = validatePost(postProperties);
     if (errors.title || errors.language || errors.body)
       return Session.set('postEditErrors', errors);
 
@@ -44,7 +44,7 @@ Template.postEdit.events({
     e.preventDefault();
 
     if (confirm("Delete this post?")) {
-      var currentPostId = this._id;
+      const currentPostId = this._id;
       Posts.remove(currentPostId);
       Router.go('postsList');
     }

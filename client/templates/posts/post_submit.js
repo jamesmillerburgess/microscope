@@ -16,13 +16,13 @@ Template.postSubmit.events({
   'submit form': function (e) {
     e.preventDefault();
 
-    var post = {
+    const post = {
       language: $(e.target).find('[name=language]').val(),
       title: $(e.target).find('[name=title]').val(),
       body: $(e.target).find('[name=body]').val()
     };
 
-    var errors = validatePost(post);
+    const errors = validatePost(post);
     if (errors.title || errors.language || errors.body)
       return Session.set('postSubmitErrors', errors);
 
