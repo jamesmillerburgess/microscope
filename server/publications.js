@@ -20,8 +20,4 @@ Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId, read: false});
 });
 
-Meteor.publish('user', function() {
-  return Meteor.user();
-});
-
 Meteor.publish('languages', () => Languages.find());

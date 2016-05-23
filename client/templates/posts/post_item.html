@@ -1,6 +1,7 @@
 <template name="postItem">
   <div class="post">
-    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
+
+    <a href="#" class="upvote {{upvotedClass}}"><img src="{{picture}}" height="50px" width="50px"/></a>
     <div class="post-content">
       <h3><a href="{{pathFor 'postPage'}}">{{title}}</a><span>{{language}}</span></h3>
       <p>
